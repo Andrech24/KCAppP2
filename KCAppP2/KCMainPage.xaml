@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KCAppP2.MainPage"
+             BackgroundColor="White">
+
+    <AbsoluteLayout>
+        <!-- Título de la aplicación -->
+        <Label Text="Conversor de Velocidad" 
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               AbsoluteLayout.LayoutBounds="0.5, 0.1, -1, -1"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        <!-- Entrada de cantidad a convertir -->
+        <Entry x:Name="KCEntryCantidad"
+               Placeholder="Ingresa la cantidad"
+               Keyboard="Numeric"
+               AbsoluteLayout.LayoutBounds="0.5, 0.3, 300, 50"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        <!-- Picker para seleccionar la unidad origen -->
+        <Picker x:Name="KCPickerOrigen"
+                Title="Unidad origen"
+                AbsoluteLayout.LayoutBounds="0.5, 0.4, 300, 50"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        <!-- Picker para seleccionar la unidad destino -->
+        <Picker x:Name="KCPickerDestino"
+                Title="Unidad destino"
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 300, 50"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        <!-- Botón para realizar la conversión -->
+        <Button Text="Convertir" 
+                Clicked="OnConvertirClicked"
+                AbsoluteLayout.LayoutBounds="0.5, 0.6, 200, 50"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        <!-- Etiqueta para mostrar el resultado -->
+        <Label x:Name="KCLabelResultado"
+               Text="Resultado:"
+               FontSize="18"
+               AbsoluteLayout.LayoutBounds="0.5, 0.7, -1, -1"
+               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
+        <!-- Botón para limpiar la pantalla -->
+        <Button Text="Limpiar"
+                Clicked="OnLimpiarClicked"
+                AbsoluteLayout.LayoutBounds="0.5, 0.8, 200, 50"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+    </AbsoluteLayout>
+
+</ContentPage>
+
