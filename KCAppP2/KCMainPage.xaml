@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KCAppP2.MainPage"
-             BackgroundColor="White">
+             BackgroundColor="Black">
 
     <AbsoluteLayout>
         <!-- Título de la aplicación -->
@@ -19,10 +19,13 @@
                Keyboard="Numeric"
                AbsoluteLayout.LayoutBounds="0.5, 0.3, 300, 50"
                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        
 
         <!-- Picker para seleccionar la unidad origen -->
         <Picker x:Name="KCPickerOrigen"
+                
                 Title="Unidad origen"
+                
                 AbsoluteLayout.LayoutBounds="0.5, 0.4, 300, 50"
                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
@@ -50,6 +53,7 @@
                 Clicked="OnLimpiarClicked"
                 AbsoluteLayout.LayoutBounds="0.5, 0.8, 200, 50"
                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                
     </AbsoluteLayout>
 
 </ContentPage>
