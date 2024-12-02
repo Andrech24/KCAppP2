@@ -4,22 +4,38 @@
              x:Class="KCAppP2.MainPage"
              BackgroundColor="#f9f9f9">
 
-    <AbsoluteLayout>
-        <!-- Título de la aplicación con un color de fondo más destacado -->
+    <!-- Usamos un Grid para organizar mejor los elementos -->
+    <Grid Padding="20" RowSpacing="20" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Título -->
+            <RowDefinition Height="Auto"/>
+            <!-- Entrada cantidad -->
+            <RowDefinition Height="Auto"/>
+            <!-- Picker unidad origen -->
+            <RowDefinition Height="Auto"/>
+            <!-- Picker unidad destino -->
+            <RowDefinition Height="Auto"/>
+            <!-- Botón Convertir -->
+            <RowDefinition Height="Auto"/>
+            <!-- Resultado -->
+            <RowDefinition Height="Auto"/>
+            <!-- Botón Limpiar -->
+        </Grid.RowDefinitions>
+
+        <!-- Título de la aplicación -->
         <Label Text="Conversor de Velocidad"
-               FontSize="28"
+               FontSize="36"
                FontAttributes="Bold"
                HorizontalOptions="Center"
                TextColor="#4caf50"
-               AbsoluteLayout.LayoutBounds="0.5, 0.1, -1, -1"
-               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+               Grid.Row="0" />
 
-        <!-- Entrada de cantidad a convertir, envuelta en un Frame para bordes redondeados -->
+        <!-- Entrada de cantidad -->
         <Frame BackgroundColor="#e0f7fa"
                CornerRadius="15"
                Padding="5"
-               AbsoluteLayout.LayoutBounds="0.5, 0.3, 300, 50"
-               AbsoluteLayout.LayoutFlags="PositionProportional">
+               Grid.Row="1">
             <Entry x:Name="KCEntryCantidad"
                    Placeholder="Ingresa la cantidad"
                    Keyboard="Numeric"
@@ -33,21 +49,23 @@
         <Picker x:Name="KCPickerOrigen"
                 Title="Unidad origen"
                 BackgroundColor="#f1f8e9"
-                FontSize="18"
+                FontSize="22"
                 TextColor="#333"
-                AbsoluteLayout.LayoutBounds="0.5, 0.4, 300, 50"
-                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                HeightRequest="70" 
+                VerticalTextAlignment="Center"
+                Grid.Row="2"/>
 
         <!-- Picker para seleccionar la unidad destino -->
         <Picker x:Name="KCPickerDestino"
                 Title="Unidad destino"
                 BackgroundColor="#f1f8e9"
-                FontSize="18"
+                FontSize="22"
                 TextColor="#333"
-                AbsoluteLayout.LayoutBounds="0.5, 0.5, 300, 50"
-                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                HeightRequest="70" 
+                VerticalTextAlignment="Center"
+                Grid.Row="3"/>
 
-        <!-- Botón para realizar la conversión con un color destacado y bordes redondeados -->
+        <!-- Botón para realizar la conversión -->
         <Button Text="Convertir"
                 Clicked="OnConvertirClicked"
                 BackgroundColor="#4caf50"
@@ -55,19 +73,17 @@
                 CornerRadius="25"
                 HeightRequest="50"
                 FontSize="18"
-                AbsoluteLayout.LayoutBounds="0.5, 0.6, 200, 50"
-                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                Grid.Row="4"/>
 
-        <!-- Etiqueta para mostrar el resultado, con mayor contraste -->
+        <!-- Etiqueta para mostrar el resultado -->
         <Label x:Name="KCLabelResultado"
                Text="Resultado:"
                FontSize="18"
                TextColor="#333"
                HorizontalOptions="Center"
-               AbsoluteLayout.LayoutBounds="0.5, 0.7, -1, -1"
-               AbsoluteLayout.LayoutFlags="PositionProportional"/>
+               Grid.Row="5"/>
 
-        <!-- Botón para limpiar la pantalla con bordes redondeados y un color cálido -->
+        <!-- Botón para limpiar la pantalla -->
         <Button Text="Limpiar"
                 Clicked="OnLimpiarClicked"
                 BackgroundColor="#ff7043"
@@ -75,8 +91,6 @@
                 CornerRadius="25"
                 HeightRequest="50"
                 FontSize="18"
-                AbsoluteLayout.LayoutBounds="0.5, 0.8, 200, 50"
-                AbsoluteLayout.LayoutFlags="PositionProportional"/>
-
-    </AbsoluteLayout>
+                Grid.Row="6"/>
+    </Grid>
 </ContentPage>
