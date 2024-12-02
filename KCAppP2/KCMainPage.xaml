@@ -2,59 +2,81 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="KCAppP2.MainPage"
-             BackgroundColor="Black">
+             BackgroundColor="#f9f9f9">
 
     <AbsoluteLayout>
-        <!-- Título de la aplicación -->
-        <Label Text="Conversor de Velocidad" 
-               FontSize="24"
+        <!-- Título de la aplicación con un color de fondo más destacado -->
+        <Label Text="Conversor de Velocidad"
+               FontSize="28"
                FontAttributes="Bold"
                HorizontalOptions="Center"
+               TextColor="#4caf50"
                AbsoluteLayout.LayoutBounds="0.5, 0.1, -1, -1"
                AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
-        <!-- Entrada de cantidad a convertir -->
-        <Entry x:Name="KCEntryCantidad"
-               Placeholder="Ingresa la cantidad"
-               Keyboard="Numeric"
+        <!-- Entrada de cantidad a convertir, envuelta en un Frame para bordes redondeados -->
+        <Frame BackgroundColor="#e0f7fa"
+               CornerRadius="15"
+               Padding="5"
                AbsoluteLayout.LayoutBounds="0.5, 0.3, 300, 50"
-               AbsoluteLayout.LayoutFlags="PositionProportional"/>
-        
+               AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Entry x:Name="KCEntryCantidad"
+                   Placeholder="Ingresa la cantidad"
+                   Keyboard="Numeric"
+                   FontSize="18"
+                   TextColor="#333"
+                   HorizontalTextAlignment="Center"
+                   BackgroundColor="Transparent"/>
+        </Frame>
 
         <!-- Picker para seleccionar la unidad origen -->
         <Picker x:Name="KCPickerOrigen"
-                
                 Title="Unidad origen"
-                
+                BackgroundColor="#f1f8e9"
+                FontSize="18"
+                TextColor="#333"
                 AbsoluteLayout.LayoutBounds="0.5, 0.4, 300, 50"
                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
         <!-- Picker para seleccionar la unidad destino -->
         <Picker x:Name="KCPickerDestino"
                 Title="Unidad destino"
+                BackgroundColor="#f1f8e9"
+                FontSize="18"
+                TextColor="#333"
                 AbsoluteLayout.LayoutBounds="0.5, 0.5, 300, 50"
                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
-        <!-- Botón para realizar la conversión -->
-        <Button Text="Convertir" 
+        <!-- Botón para realizar la conversión con un color destacado y bordes redondeados -->
+        <Button Text="Convertir"
                 Clicked="OnConvertirClicked"
+                BackgroundColor="#4caf50"
+                TextColor="White"
+                CornerRadius="25"
+                HeightRequest="50"
+                FontSize="18"
                 AbsoluteLayout.LayoutBounds="0.5, 0.6, 200, 50"
                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
-        <!-- Etiqueta para mostrar el resultado -->
+        <!-- Etiqueta para mostrar el resultado, con mayor contraste -->
         <Label x:Name="KCLabelResultado"
                Text="Resultado:"
                FontSize="18"
+               TextColor="#333"
+               HorizontalOptions="Center"
                AbsoluteLayout.LayoutBounds="0.5, 0.7, -1, -1"
                AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
-        <!-- Botón para limpiar la pantalla -->
+        <!-- Botón para limpiar la pantalla con bordes redondeados y un color cálido -->
         <Button Text="Limpiar"
                 Clicked="OnLimpiarClicked"
+                BackgroundColor="#ff7043"
+                TextColor="White"
+                CornerRadius="25"
+                HeightRequest="50"
+                FontSize="18"
                 AbsoluteLayout.LayoutBounds="0.5, 0.8, 200, 50"
                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
-                
+
     </AbsoluteLayout>
-
 </ContentPage>
-
